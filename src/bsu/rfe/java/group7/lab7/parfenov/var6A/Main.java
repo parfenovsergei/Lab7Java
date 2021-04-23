@@ -176,17 +176,17 @@ public class Main extends JFrame {
 //Проверка корректности IP-адреса
             String[] ipArr = destinationAddress.split("\\.");
             if(ipArr.length != 4) {
-                JOptionPane.showMessageDialog(this,
-                        "Введите верный IP-адрес", "Ошибка",
-                        JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "IP-адрес введен неверно!" ,
+                        "Ошибка", JOptionPane.ERROR_MESSAGE);
+                textFieldTo.requestFocusInWindow();
                 return;
             }
             for(String ipValue : ipArr){
                 int i = Integer.parseInt(ipValue);
                 if(( i < 0 ) || ( i > 255 )) {
-                    JOptionPane.showMessageDialog(this,
-                            "Введите верный IP-адрес", "Ошибка",
-                            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "IP-адрес введен неверно!" ,
+                            "Ошибка", JOptionPane.ERROR_MESSAGE);
+                    textFieldTo.requestFocusInWindow();
                     return;
                 }
             }
